@@ -1,9 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "COVID-19 Deaths Cases in 2023",
+    "title": "Happiness Index Around the World in 2019",
     "width": 800,
     "height": 400,
-    "projection": {"type": "equirectangular"},
+    "projection": {"type": "equalEarth"},
     "data": {
       "url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Homework9/json_files/ne_110m.json",
       "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -42,38 +42,35 @@
             "lookup": "properties.NAME",
             "from": {
               "data": {
-                "url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Homework9/data/World%20Happiness%20Report_2019.csv"
+                "url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Homework9/data/World_Happiness_Report_2019.csv"
               },
               "key": "Country",
-              "fields": ["Active", "Confirmed", "Population"]
+              "fields": ["Score", "Freedom to make life choices"]
             }
           },
           {
-            "calculate": "datum.Confirmed/datum.Population * 10000",
-            "as": "Confirmed per 10,000 population"
+            "calculate": "datum.Score",
+            "as": "Happiness Index Scores"
           }
         ],
         "mark": {"type": "geoshape", "stroke": "white"},
         "encoding": {
           "color": {
-            "field": "Confirmed per 10,000 population",
+            "field": "Happiness Index Scores",
             "type": "quantitative",
             "scale": {
               "type": "threshold",
-              "domain": [1, 10, 100],
-              "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+              "domain": [3, 5, 7],
+              "range": ["#c7e9c0", "#74c476", "#31a354", "#006d2c"]
             }
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-            {"field": "Active", "type": "quantitative"},
-            {
-              "field": "Confirmed per 10,000 population",
-              "type": "quantitative",
-              "format": ".2f"
-            }
+            {"field": "Happiness Index Scores", "type": "quantitative"},
+            {"field": "Freedom to make life choices", "type": "quantitative"}
           ]
         }
       }
-    ]
+    ],
+    "config": {}
   }
