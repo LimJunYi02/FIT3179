@@ -1,0 +1,79 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "COVID-19 Deaths Cases in 2023",
+    "width": 800,
+    "height": 400,
+    "projection": {"type": "equirectangular"},
+    "data": {
+      "url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Homework9/json_files/ne_110m.json",
+      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    },
+    "layer": [
+      {
+        "transform": [
+          {
+            "calculate": "'Data is not available in ' + datum.properties.NAME",
+            "as": "note"
+          }
+        ],
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "encoding": {"tooltip": {"field": "note"}}
+      },
+
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Homework9/json_files/oceans.json",
+          "format": {"type": "topojson", "feature": "oceans"}
+        },
+        "mark": {"type": "geoshape", "fill": "skyblue"}
+      },
+
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Homework9/json_files/ne_110m.json",
+          "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+        },
+        "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+      },
+
+      {
+        "transform": [
+          {
+            "lookup": "properties.NAME",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Homework9/data/World%20Happiness%20Report_2019.csv"
+              },
+              "key": "Country",
+              "fields": ["Active", "Confirmed", "Population"]
+            }
+          },
+          {
+            "calculate": "datum.Confirmed/datum.Population * 10000",
+            "as": "Confirmed per 10,000 population"
+          }
+        ],
+        "mark": {"type": "geoshape", "stroke": "white"},
+        "encoding": {
+          "color": {
+            "field": "Confirmed per 10,000 population",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [1, 10, 100],
+              "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+            }
+          },
+          "tooltip": [
+            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+            {"field": "Active", "type": "quantitative"},
+            {
+              "field": "Confirmed per 10,000 population",
+              "type": "quantitative",
+              "format": ".2f"
+            }
+          ]
+        }
+      }
+    ]
+  }
