@@ -1,0 +1,80 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "title": "Happiness Index 2019 Scatter Plot",
+    "data": {
+      "url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Homework10/data/World_Happiness_Report_2019.csv"
+    },
+
+    "params": [
+      {
+        "name": "index_base",
+        "value": 0,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 7,
+          "step": 0.5,
+          "name": "Happiness Indexs Higher than: "
+        }
+      }
+    ],
+    "transform": [
+        {"filter": "datum.Score > index_base"}
+    ],
+    "encoding": {
+      "x": {
+        "field": "Social_support",
+        "type": "quantitative",
+        "title": "Social Support"
+      },
+      "y": {
+        "field": "Score",
+        "type": "quantitative",
+        "scale": {"domain": [2, 8], "nice": true}
+      }
+    },
+
+    "layer": [
+      {
+        "mark":"circle",
+        "encoding": {
+            "color":{
+            "condition":{
+            "test": "datum['Country'] == 'Finland' || datum['Country'] == 'S. Sudan' || datum['Country'] == 'Australia' || datum['Country'] == 'Malaysia'", "value": "red"},
+            "value": "aqua"
+            },
+            "opacity": {"value": 0.8},
+            "size":{"value": 80},
+            "tooltip": [
+                {"field": "Country", "type": "nominal"},
+                {"field": "Overall_rank", "type": "nominal"},
+                {"field": "Score", "type": "quantitative", "format": ".2f"},
+                {"field": "Social_support", "type": "quantitative", "format": ".2f"}
+            ]
+        }
+      },
+      {
+        "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "dx": -12,
+            "fontSize": 11.5,
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "text": {"field": "Country", "type": "nominal"},
+            "color": {"value": "black"},
+            "opacity": {
+              "condition": {
+                "test": "datum['Country'] == 'Finland' || datum['Country'] == 'S. Sudan' || datum['Country'] == 'Australia' || datum['Country'] == 'Malaysia'",
+                "value": 1
+              },
+              "value": 0
+            }
+        }
+      }
+    ]
+  }
