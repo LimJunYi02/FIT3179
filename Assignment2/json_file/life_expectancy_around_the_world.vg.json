@@ -119,7 +119,11 @@
                         "domain": [60,65,70,75,80],
                         "range": ["#ffffcc", "#d9f0a3", "#addd8e", "#78c679", "#31a354", "#006837"]
                       },
-                      "title": "Life Expectancy (years)"
+                      "legend": {
+                        "title": "Life Expectancy (years)",
+                        "titleFontSize": 12,
+                        "labelFontSize": 11
+                      }
                 },
                 "tooltip" : [
                     {"field": "geo.properties.NAME", "type": "nominal", "title": "Country"},
