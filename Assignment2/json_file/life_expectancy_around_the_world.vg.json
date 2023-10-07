@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Life Expectancy Around the World, 1990-2021",
+    "title": {"text": "Life Expectancy Around the World, 1990-2021", "fontSize": 16, "fontWeight":"bold"},
     "width": 800,
     "height": 400,
 
