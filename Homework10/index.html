@@ -25,13 +25,19 @@
 
     <script type="text/javascript">
 
+        let tooltipOptions = {
+            sanitize: (value) => {
+              return "<strong>" + value + "</strong>"
+            },
+        };
+
         var vis1 = "json_files/world_happiness_2019.vg.json";
-        vegaEmbed('#world_happiness_map', vis1).then(function(result) {
+        vegaEmbed('#world_happiness_map', vis1, {tooltip: tooltipOptions}).then(function(result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var vis2 = "json_files/happiness_plot.vg.json";
-        vegaEmbed('#happiness_plot', vis2).then(function(result) {
+        vegaEmbed('#happiness_plot', vis2, {tooltip: tooltipOptions}).then(function(result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
       </script>
