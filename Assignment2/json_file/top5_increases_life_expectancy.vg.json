@@ -58,20 +58,46 @@
     },
     "layer": [
         {
-          "mark": "line",
-          "encoding": {
-            "detail": {
-              "field": "Country",
-              "type": "nominal"
+            "mark": "line",
+                "encoding": {
+                    "detail": {
+                        "field": "Country",
+                        "type": "nominal"
+                    },
+                    "color": {"value": "#3182bd"}
+                }
+        },
+        {
+            "transform": [
+                {
+                    "filter": "datum.year == 2021"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "baseline": "middle",
+                "align": "left",
+                "dx": -65,
+                "dy": -8,
+                "fontSize": 11,
+                "fontWeight": "bold"
             },
-            "color": {"value": "#3182bd"}
-          }
+            "encoding": {
+                "text": {
+                    "field": "life_expectancy_increased",
+                    "type": "quantitative",
+                    "format": ".1f"
+                },
+                "tooltip": [
+                    {"field": "life_expectancy_increased", "type": "quantitative", "format": ".1f", "title": "Expectancy Increased (years)"}
+                ]
+            }
         },
         {
             "mark": {
                 "type": "point",
                 "filled": true,
-                "size": 100
+                "size": 150
             },
             "encoding": {
                 "color": {
@@ -87,8 +113,7 @@
                 "tooltip": [
                     {"field": "Country", "type": "nominal", "title": "Country"},
                     {"field": "year", "type": "quantitative", "title": "Year"},
-                    {"field": "life_expectancy", "type": "quantitative", "format": ".1f", "title": "Life Expectancy (years)"},
-                    {"field": "life_expectancy_increased", "type": "quantitative", "format": ".1f", "title": "Increased (years)"}
+                    {"field": "life_expectancy", "type": "quantitative", "format": ".1f", "title": "Life Expectancy (years)"}
                 ],
                 "opacity": {"value": 1}
             }
