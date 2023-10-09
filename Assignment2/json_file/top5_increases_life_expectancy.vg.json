@@ -117,6 +117,36 @@
                 ],
                 "opacity": {"value": 1}
             }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "fontWeight": "bold",
+                "lineBreak": "\n"
+            },
+            "encoding": {
+                "text":{ "value": "Over the past 31 years, South Sudan has\nexperienced the most gains in life expectancy."},
+                "color": { "value": "grey"},
+                "size": {"value": 11},
+                "x": { "value": 10},
+                "y": { "value": 65}
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "fontWeight": "bold",
+                "lineBreak": "\n"
+            },
+            "encoding": {
+                "text":{ "value": "Among the top 5 countries, Angola's\nlife expectancy increased at the slowest rate."},
+                "color": { "value": "grey"},
+                "size": {"value": 11},
+                "x": { "value": 10},
+                "y": { "value": 370}
+            }
         }
     ]
 }
