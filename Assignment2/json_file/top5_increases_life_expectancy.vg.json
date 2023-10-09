@@ -122,7 +122,7 @@
             "mark": {
                 "type": "text",
                 "align": "left",
-                "fontWeight": "bold",
+                "fontWeight": 600,
                 "lineBreak": "\n"
             },
             "encoding": {
@@ -137,7 +137,7 @@
             "mark": {
                 "type": "text",
                 "align": "left",
-                "fontWeight": "bold",
+                "fontWeight": 600,
                 "lineBreak": "\n"
             },
             "encoding": {
