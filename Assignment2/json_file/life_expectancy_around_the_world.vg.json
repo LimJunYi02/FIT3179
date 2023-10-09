@@ -40,12 +40,12 @@
         },
         {
             "name": "zoom_level",
-            "value": 145,
+            "value": 150,
             "bind": {
                 "input": "range",
-                "min": 145,
+                "min": 150,
                 "max": 400,
-                "step": 5,
+                "step": 10,
                 "name": "Zoom: "
             }
         }
@@ -132,6 +132,23 @@
                     {"field": "HDI_Rank_(2021)", "type": "nominal", "title": "HDI Ranking (2021)"},
                     {"field": "UNDP_Developing_Regions", "type": "nominal", "title": "UNDP Regions"}
                 ]
+            }
+        },
+
+        {
+            "data": { "url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Assignment2/data/Life%20Expectancy%20at%20Birth.csv"},
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "fontWeight": 600,
+                "lineBreak": "\n"
+            },
+            "encoding": {
+                "text":{ "value": "The widespread coronavirus epidemic\nknown as Covid-19 caused a considerable\ndecline in life expectancy after the year 2019."},
+                "color": { "value": "grey"},
+                "size": {"value": 11},
+                "x": { "value": 300},
+                "y": { "value": 340}
             }
         }
     ]
