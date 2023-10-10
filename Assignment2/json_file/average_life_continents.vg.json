@@ -104,10 +104,10 @@
             "encoding": {
             "color": {"field": "Continent", "type": "nominal", 
               "scale":{
-                "range": ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00"]
+                "range": ["#4daf4a", "#377eb8", "#e41a1c", "#984ea3", "#ff7f00"]
               }
             },
-            "opacity": {"value": 0.6},
+            "opacity": {"value": 0.5},
             "tooltip": [
                 {"field": "Continent", "type": "nominal"},
                 {"field": "avg_life_expectancy", "type": "quantitative", "format": ".1f", "title": "Average Lifespan (years)"}
