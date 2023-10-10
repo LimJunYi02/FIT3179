@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {"text": "Top 5 Countries with the Highest Increases in Life Expectancy, 1990-2021", "fontSize": 16, "fontWeight":"bold"},
-    "width": 400,
-    "height": 400,
+    "background":"whitesmoke",
+    "width": "container",
+    "height": 500,
 
     "data": {"url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Assignment2/data/Life%20Expectancy%20at%20Birth.csv"},
 

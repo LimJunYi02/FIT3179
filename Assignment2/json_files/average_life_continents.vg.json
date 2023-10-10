@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {"text": "Average Life Expectancy of different continents, 1990-2021", "fontSize": 16, "fontWeight":"bold"},
-    "width": 600,
-    "height": 400,
+    "background":"whitesmoke",
+    "width": "container",
+    "height": 500,
 
     "data": {"url": "https://raw.githubusercontent.com/LimJunYi02/FIT3179/main/Assignment2/data/Life%20Expectancy%20at%20Birth.csv"},
 

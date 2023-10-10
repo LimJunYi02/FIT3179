@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {"text": "Human Development and Median Life Expectancy, 1990-2021", "fontSize": 16, "fontWeight":"bold"},
-    "width": 600,
-    "height": 400,
+    "background":"whitesmoke",
+    "width": "container",
+    "height": 500,
 
     "params": [
       {
