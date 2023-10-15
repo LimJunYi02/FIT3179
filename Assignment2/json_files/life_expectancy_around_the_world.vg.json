@@ -25,6 +25,7 @@
             "bind": {
                 "input": "select",
                 "options": [
+                    [102, 4.2],
                     [0, 0],
                     [15, 45],
                     [15, 0],
@@ -35,7 +36,7 @@
                     [-90, 10],
                     [-65, -20]
                 ],
-                "labels": ["Center", "Europe", "Africa", "Middle East Asia", "East Asia", "Oceania", "North America", "Central America", "South America"],
+                "labels": ["Malaysia", "Center", "Europe", "Africa", "Middle East Asia", "East Asia", "Oceania", "North America", "Central America", "South America"],
                 "name": "Map Centre: "
             }
         },
