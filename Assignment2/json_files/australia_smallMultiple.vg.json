@@ -6,7 +6,7 @@
     "columns": 4,
     "spec": {
         "projection": {"type": "equirectangular"},
-        "width": 365,
+        "width": 325,
         "height": 300,
         "layer": [{
                 "data": {
@@ -62,7 +62,11 @@
                             ],
                             "scheme": "greens"
                         },
-                        "legend": {"title": "Life Expectancy (years)" }
+                        "legend": {
+                            "title": "Life Expectancy (years)", 
+                            "titleFontSize": 12,
+                            "labelFontSize": 11
+                        }
                     },
                     "tooltip": [
                         {"field": "geo.properties.NAME", "type": "nominal", "title": "Country"},
@@ -101,6 +105,29 @@
                     "text": { "field": { "repeat": "repeat" } }
                 }
 
+            },
+            {
+                "data": {
+                    "values": [{
+                        "1990": "Life Expectancy: 77.0 years",
+                        "1995": "Life Expectancy: 78.3 years",
+                        "2000": "Life Expectancy: 79.6 years",
+                        "2005": "Life Expectancy: 81.1 years",
+                        "2010": "Life Expectancy: 82.1 years",
+                        "2015": "Life Expectancy: 82.7 years",
+                        "2020": "Life Expectancy: 84.3 years",
+                        "2021": "Life Expectancy: 84.5 years"
+                    }]
+                },
+                "mark": {
+                    "type": "text",
+                    "align": "center",
+                    "y": 125,
+                    "fontWeight": "bold"
+                },
+                "encoding": {
+                    "text": { "field": { "repeat": "repeat" } }
+                }
             }
         ]
     },

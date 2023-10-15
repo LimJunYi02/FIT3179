@@ -95,8 +95,22 @@
     ],
 
     "encoding": {
-        "x": {"field": "year", "type": "ordinal", "title": "Year"},
-        "y": {"field": "avg_life_expectancy", "type": "quantitative", "title": "Average Life Expectancy (years)", "scale": {"domain": [0, 85]}}
+        "x": {"field": "year", "type": "ordinal", 
+          "axis": {
+            "title": "Year",
+            "titleFontWeight":"bold",
+            "titleFontSize": 13,
+            "labelFontSize": 11
+          }
+        },
+        "y": {"field": "avg_life_expectancy", "type": "quantitative", "scale": {"domain": [0, 85]}, 
+          "axis": {
+            "title": "Average Life Expectancy (years)",
+            "titleFontWeight":"bold",
+            "titleFontSize": 13,
+            "labelFontSize": 11
+          }
+        }
       },
 
     "layer": [
@@ -106,7 +120,12 @@
             "color": {"field": "Continent", "type": "nominal", 
               "scale":{
                 "range": ["#4daf4a", "#377eb8", "#e41a1c", "#984ea3", "#ff7f00"]
-              }
+              },
+              "legend": {
+                "title": "Continent",
+                "titleFontSize": 12,
+                "labelFontSize": 11
+            }
             },
             "opacity": {"value": 0.5},
             "tooltip": [
@@ -127,7 +146,7 @@
               "color": { "value": "grey"},
               "size": {"value": 11},
               "x": { "value": 20},
-              "y": { "value": 320}
+              "y": { "value": 450}
           }
         }
       ]
