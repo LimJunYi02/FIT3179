@@ -21,6 +21,7 @@
         },
         {
           "name": "continentSelection",
+          "value": null,
           "bind": {
             "input": "select",
             "options": [
@@ -87,9 +88,6 @@
             "as": ["year", "avg_life_expectancy"]
         },
         {
-            "filter": "continentSelection == null || datum.Continent == continentSelection"
-        },
-        {
             "filter": "datum.year <= yearSelection"
         }
     ],
@@ -127,7 +125,13 @@
                 "labelFontSize": 11
             }
             },
-            "opacity": {"value": 0.5},
+            "opacity": {
+              "condition": {
+                "test": "continentSelection === null || datum.Continent === continentSelection",
+                "value": 0.8
+              },
+              "value": 0.15
+            },
             "tooltip": [
                 {"field": "Continent", "type": "nominal"},
                 {"field": "avg_life_expectancy", "type": "quantitative", "format": ".1f", "title": "Average Lifespan (years)"}
